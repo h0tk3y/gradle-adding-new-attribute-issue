@@ -2,11 +2,6 @@ plugins {
     `java-library`
 }
 
-val fooAttribute = Attribute.of("com.example.foo", String::class.java)
-configurations.matching { it.name in setOf("compileClasspath", "runtimeClasspath") }.all {
-    attributes.attribute(fooAttribute, "foo1")
-}
-
 repositories {
     maven(layout.projectDirectory.dir("../producer/build/repo"))
 }

@@ -24,7 +24,7 @@ configurations.matching { it.name in setOf("fooApiElements", "fooRuntimeElements
 
 if (v2) {
     val barAttribute = Attribute.of("com.example.bar", String::class.java)
-    configurations.matching { it.name in setOf("apiElements", "runtimeElements", "fooApiElements", "fooRuntimeElements") }.all {
+    configurations.matching { it.name in setOf("apiElements", "fooApiElements") }.all {
         attributes.attribute(barAttribute, "bar1")
     }
 }
